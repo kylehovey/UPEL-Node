@@ -2,6 +2,24 @@
 
 A small example project in Node.JS.
 
+## Intro
+
+The goal of this project is to create a basic web app that will query a Node.JS server for information about the computer/server Node is running on.
+
+The app must:
+* Display processor info
+  * Name
+  * Number of cores
+  * Clock speed
+  * Current usage (refreshes every 1s)
+* Display memory info
+  * Total memory
+  * Available memory (refreshes every 1s)
+* Display network info
+  * Current IP address as assigned via DHCP (refreshes every 15s)
+
+All data must be queried via an HTTP API built using (an) Express router(s). I have included boilerplate code that will allow you to write the app using the most recent draft of ECMAscript (ES6/ES2017). To submit an entry for this project, fork this repository and make your commits/changes there. Following are instructions on how to use the boilerplate code I have provided for this project. Good luck!
+
 ## Command Line Dependencies:
 
 * Gulp
