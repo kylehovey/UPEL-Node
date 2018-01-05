@@ -1,6 +1,6 @@
-# node-express-boilerplate
+# UPEL Node
 
-A Node.js boilerplate to get you off the ground and running.
+A small example project in Node.JS.
 
 ## Command Line Dependencies:
 
