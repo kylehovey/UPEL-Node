@@ -18,7 +18,7 @@ A Node.js boilerplate to get you off the ground and running.
 
 * Clone this repository
 * `cd` into the repo directory then run `npm install`.
-* Run `gulp` to execute all tasks (this will compile the JS, CSS, de-lint code, and generate documentation).
+* Run `gulp` to execute all tasks (this will compile the JS and CSS).
 * In the project root, run `npm start` to begin the server
 * Navigate to [http://localhost:3000](http://localhost:3000) on the same machine running the server to view the app
 
@@ -52,83 +52,6 @@ I have already written these common task types:
   "enabled" : true
 }
  ```
-- `lintClient`:
-  - Example Task Configuration:
- ```json
-{
-  "name" : "app-ESLint",
-  "opts" : { },
-  "src" : "./src/**/*.js",
-  "enabled" : true
-}
- ```
-- `lintNode`:
-  - Example Task Configuration:
- ```json
-{
-  "name" : "node-ESLint",
-  "opts" : { },
-  "src" : [
-    "./**/*.js",
-    "!./node_modules/**",
-    "!./public/**",
-    "!./src/**/*.js",
-    "!./docs/**"
-  ],
-  "enabled" : true
-}
- ```
-- `document`:
-  - Example Task Configuration:
- ```json
-{
-  "name" : "document-client",
-  "opts" : { },
-  "src" : "src/js/",
-  "dest" : "docs",
-  "enabled" : true
-}
- ```
-
- **Example Handler:**:
-
- ```javascript
-/**
- * Run ESLint (Client)
- * @param {String} source Source of files (supports globbing)
- * @param {String} destination Destination of files (supports globbing)
- * @param {Object} opts Any options
- * @return {Function}
- */
-function lintClient(source, destination, opts) {
-  return () => gulp.src(source)
-    .pipe(eslint({ config : "./src/.eslintrc.client.json" }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-}
- ```
-
- After writing the handler, a reference must be made in the handlers object defined at the top of `gulpfile.json`:
-
- ```javascript
-// Assign handlers
-// (function names are the same name as the handler keys)
-const handlers = {
-  document,
-  compileJS,
-  compileCSS,
-  lintClient,
-  lintNode
-};
- ```
-
-# ESLint
-
-I have set up an ESLint configuration for both Node server-side and client-side code. The configs are located in `.eslintrc.json` and in `src/.eslintrc.json` for Node and client (respectively). Change these as you see fit. ESLint is run using `gulp`.
-
-# Documentation
-
-The `document` gulp task is set up to generate HTML doc files for client-side code using [ESDoc](https://esdoc.org/). All documentation will be output in a `docs` directory once the task has been run. The `.gitignore` file does not track generated documentation, so it will have to be generated on a clean clone of this repo.
 
 # Client-Side Application JS
 
@@ -139,7 +62,3 @@ The `main.js` file located in `src/js/index/` is an entry point for all applicat
 # Compiling
 
 By default, the `gulp` task `compileJS` is set up to use webpack to convert `main.js` into a bundle containing its dependencies, which outputs in the corresponding location in `public/js/app`. The `opts` object for this task in `config/gulp.json` will not transpile ES6/ES7 and will not minify by default. To enable these features for a production build, just set the `production` flag in the aformentioned `opts` object to true.
-
-# Components
-
-Components are abstract views/logic that typically deal with user interaction and building elements of the DOM. I typically build components in their own directory located in `/src/js/components/`. The component directory name should match the component JS filename. To make things easy, compiled component JS files should be loaded in the base `layout.pug` in `/views/` as every view should inherit from the layout and consequently will have those components available to those scripts.

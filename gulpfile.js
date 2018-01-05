@@ -1,10 +1,8 @@
 // Dependencies
 const gulp = require("gulp");
 const sass = require("gulp-sass");
-const eslint = require("gulp-eslint");
 const webpack = require("webpack-stream");
 const changed = require("gulp-changed");
-const esdoc = require("gulp-esdoc");
 
 // Webpack plugins
 const Uglify = require("uglifyjs-webpack-plugin");
@@ -15,11 +13,8 @@ const compileTasks = require("./config/gulp.json").tasks;
 // Assign handlers
 // (function names are the same name as the handler keys)
 const handlers = {
-  document,
   compileJS,
-  compileCSS,
-  lintClient,
-  lintNode
+  compileCSS
 };
 
 /**
@@ -69,41 +64,6 @@ function compileCSS(source, destination) {
     .pipe(changed(destination))
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest(destination));
-}
-
-/**
- * Run ESLint (Client)
- * @param {String} source Source of files (supports globbing)
- * @param {String} destination Destination of files (supports globbing)
- * @return {Function}
- */
-function lintClient(source) {
-  return () => gulp.src(source)
-    .pipe(eslint({ config : "./src/.eslintrc.client.json" }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-}
-
-/**
- * Run ESLint (Node)
- * @param {String} source Source of files (supports globbing)
- * @return {Function}
- */
-function lintNode(source) {
-  return () => gulp.src(source)
-    .pipe(eslint({ config : "./.eslintrc.client.json" }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-}
-
-/**
- * Create documentation
- * @param {String} source Source of files (supports globbing)
- * @param {String} destination Destination of files (supports globbing)
- * @return {Function}
- */
-function document(source, destination) {
-  return () => gulp.src(source).pipe(esdoc({ destination }));
 }
 
 // Find enabled tasks
