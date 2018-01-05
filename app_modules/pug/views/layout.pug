@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title=title
+    link(rel='stylesheet', href='/style/main.css')
+    link(rel='stylesheet', href='/style/external/bootstrap.min.css')
+    link(rel='stylesheet', href='/style/external/sweetalert.min.css')
+  body
+    block content
+    block externalScripts
+      script(src="/js/external/polyfill.min.js")
+      script(src="/js/external/lodash.min.js")
+      script(src="/js/external/jquery.min.js")
+      script(src="/js/external/bootstrap.min.js")
+      script(src="/js/external/sweetalert.min.js")
+    block userScripts

@@ -1,0 +1,11 @@
+{
+  "ignore" : [
+    "nodemon.json",
+    "package.json",
+    "gulpfile.js",
+    "readme",
+    "public/*",
+    "src/js/*",
+    "views/*"
+  ]
+}
