@@ -18,6 +18,12 @@ The app must:
 * Display network info
   * Current IPV4 address in use by main interface (refreshes every 15s)
 
+## Example UI
+
+Here is an example that I built. The UI does not have to be elaborate. It just has to demonstrate the above goals.
+
+![example ui image][example_ui.png]
+
 All data must be queried via an HTTP API built using (an) Express router(s). I have included boilerplate code that will allow you to write the app using the most recent draft of ECMAscript (ES6/ES2017). This project uses Pug as an HTML templating language, but feel free to switch over to your meta-language of choice, or even just go with raw HTML. I would reccomend learning some HTML meta-language though as it makes development a whole lot easier down the road. In your code and HTML I will be looking for:
 
 * JS
