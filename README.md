@@ -24,6 +24,8 @@ Here is an example that I built. The UI does not have to be elaborate. It just h
 
 ![example ui image](https://github.com/kylehovey/UPEL-Node/raw/master/example_ui.png)
 
+## What To Aim For
+
 All data must be queried via an HTTP API built using (an) Express router(s). I have included boilerplate code that will allow you to write the app using the most recent draft of ECMAscript (ES6/ES2017). This project uses Pug as an HTML templating language, but feel free to switch over to your meta-language of choice, or even just go with raw HTML. I would reccomend learning some HTML meta-language though as it makes development a whole lot easier down the road. In your code and HTML I will be looking for:
 
 * JS
@@ -41,6 +43,8 @@ All data must be queried via an HTTP API built using (an) Express router(s). I h
 * Git
   * Incremental commits
   * Descriptive commit messages
+
+## Starting the Project
 
 To submit an entry for this project, fork this repository and make your commits/changes there. Following are instructions on how to use the boilerplate code I have provided for this project. To make sure this was all doable in a reasonable amount of time, I completed all of the goals in around an hour and a half. If you are not that experienced with Node, it might take a bit longer, but don't spend more than four hours on this. This project is intended to be a measure of development skill, not a project for you to stress about. Good luck!
 
