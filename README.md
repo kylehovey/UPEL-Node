@@ -16,9 +16,27 @@ The app must:
   * Total memory
   * Available memory (refreshes every 1s)
 * Display network info
-  * Current IP address as assigned via DHCP (refreshes every 15s)
+  * Current IPV4 address in use by main interface (refreshes every 15s)
 
-All data must be queried via an HTTP API built using (an) Express router(s). I have included boilerplate code that will allow you to write the app using the most recent draft of ECMAscript (ES6/ES2017). To submit an entry for this project, fork this repository and make your commits/changes there. Following are instructions on how to use the boilerplate code I have provided for this project. Good luck!
+All data must be queried via an HTTP API built using (an) Express router(s). I have included boilerplate code that will allow you to write the app using the most recent draft of ECMAscript (ES6/ES2017). This project uses Pug as an HTML templating language, but feel free to switch over to your meta-language of choice, or even just go with raw HTML. I would reccomend learning some HTML meta-language though as it makes development a whole lot easier down the road. In your code and HTML I will be looking for:
+
+* JS
+  * Knowledge of Promises and good asynchronous programming practices (no callback hell, always catch, etc...)
+  * A decent understanding of how Express routers work as endpoints
+  * Competency in using jQuery to update values on a webpage
+  * Clean, readable, and well-documented code (comments work fine, but I use ESDoc for bigger projects)
+* HTML
+  * Minimal HTML structure (no unecessary divs, ids, etc...)
+  * Basic knowledge of the Boostrap grid system
+  * A solid grasp on where ids should be used
+* SCSS/CSS
+  * Knowledge of DRY CSS
+  * Cross-browser CSS practices
+* Git
+  * Incremental commits
+  * Descriptive commit messages
+
+To submit an entry for this project, fork this repository and make your commits/changes there. Following are instructions on how to use the boilerplate code I have provided for this project. To make sure this was all doable in a reasonable amount of time, I completed all of the goals in around an hour and a half. If you are not that experienced with Node, it might take a bit longer, but don't spend more than four hours on this. This project is intended to be a measure of development skill, not a project for you to stress about. Good luck!
 
 ## Command Line Dependencies:
 
